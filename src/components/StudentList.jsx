@@ -50,7 +50,7 @@ function StudentList() {
             type="default"
             danger
             onClick={() => {
-              handleDelete(student.studentCode);
+              handleDelete(student.id);
             }}
           >
             Delete
@@ -60,11 +60,11 @@ function StudentList() {
     },
   ];
 
-  const handleDelete = (studentCode) => {
+  const handleDelete = (id) => {
     const action = {
       type: "DELETE_STUDENT",
       payload: {
-        studentCode: studentCode,
+        id: id,
       },
     };
 

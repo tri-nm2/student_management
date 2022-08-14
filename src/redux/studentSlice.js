@@ -15,7 +15,7 @@ function Reducer(state = initState, action) {
     case "DELETE_STUDENT":
       index = newStudentList.findIndex(
         (student) =>
-          student.studentCode === action.payload.studentCode && student.dataFlag
+          student.id === action.payload.id && student.dataFlag
       );
       if (index !== -1) {
         newStudentList[index].dataFlag = false;
@@ -31,7 +31,7 @@ function Reducer(state = initState, action) {
     case "UPDATE_STUDENT":
       index = newStudentList.findIndex(
         (student) =>
-          student.studentCode === action.payload.data.studentCode &&
+          student.id === action.payload.data.id &&
           student.dataFlag
       );
       if (index !== -1) {
